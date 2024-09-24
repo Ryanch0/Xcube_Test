@@ -5,7 +5,7 @@ import DetailPage from './atomic/layouts/DetailPage'
 
 export default props => {
     return (
-        <BrowserRouter basename='/Xcube_Test/'>
+        <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Navigate to="/home" />} />
                 <Route path='/home' element={<LoginForm />} />

@@ -9,9 +9,9 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
-    publicPath: '/Xcube_Test/',
+    publicPath: '/',
   },
-  mode: 'production',
+  mode: 'development',
 
   module: {
     rules: [
