@@ -4,7 +4,6 @@ import { tab_color } from '../../const/color'
 
 const Container = styled.div`
     width: 300px;
-    height: 400px;
     background-color: white;
     border-radius: 6px;
 `
@@ -14,6 +13,7 @@ const MenuTab = styled.li`
   background-color: ${tab_color};
   color: white;
   border-radius: 6px 6px 0 0;
+  font-size: 14px;
 
   ul{
     position: relative;
@@ -54,8 +54,8 @@ export default props => {
                         </ul>
                     )
                 })}
-                {props.children}
             </MenuTab>
+                {props.children}
         </Container>
     )
 }

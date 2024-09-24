@@ -12,13 +12,13 @@ import ProfileCard from '../atoms/ProfileCard'
 
 
 const Container = styled.div`
-    position: relative;
+    position: fixed;
     background-color: white;
     display: flex;
     flex-direction: column;
     min-width: 200px;
     width: 14%;
-    height: 100vh;
+    height:100vh;
 `
 const Logo = styled.img`
     width: 100%;
@@ -30,14 +30,14 @@ const Logo = styled.img`
 export default props => {
     return (
         <Container>
-            <Logo src={logo} alt='logo'/>
+            <Logo src={logo} alt='logo' />
             <TabMenu src={folder}>Open File</TabMenu>
             <TabMenu src={jaw}>Edit Jaw</TabMenu>
             <TabMenu src={tooth}>Create Tooth</TabMenu>
             <TabMenu src={crown}>Edit Crown</TabMenu>
             <TabMenu src={exportIcon}>Export</TabMenu>
             <TabMenu src={feedback} count='3'>Feedback</TabMenu>
-            <ProfileCard/>
+            <ProfileCard />
         </Container>
     )
 }
