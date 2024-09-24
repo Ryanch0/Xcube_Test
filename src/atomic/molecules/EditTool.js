@@ -31,12 +31,12 @@ const Box = styled.div`
     height: 22px;
     border: 1px solid rgba(0,0,0,0.3);
     border-left : none;
-    ${props => props.first && `
+    ${props => props.$first && `
         border-radius : 0 2px 0 0;
         border-bottom : none;
         margin-bottom : 12px;
     `}
-    ${props => props.second && `
+    ${props => props.$second && `
         border-radius : 0 0 2px 0;
         border-top : none;
         margin-top : 12px;
@@ -69,13 +69,13 @@ export default props => {
                             <ScrollSetUp title='Radius' />
                         </LinkWrap>
                         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                            <Box first='true' />
+                            <Box $first='true' />
                             <div style={{paddingLeft : '1px'}}>
                                 <img src={link}
                                     style={{ width: '18px', transform: 'rotate(90deg)' }}
                                 />
                             </div>
-                            <Box second='true' />
+                            <Box $second='true' />
                         </div>
                     </ScrollWrap>
                 </FigureDetail>

@@ -23,7 +23,7 @@ const SliderHandle = styled.div`
   border-radius: 50%;
   position: absolute;
   top: -3.5px; 
-  left: ${(props) => props.position}px;
+  left: ${(props) => props.$position}px;
   cursor: pointer;
 `;
 
@@ -80,7 +80,7 @@ export default props => {
     return (
         <SliderContainer ref={scrollerRef} fillPercentage={fillPercentage}>
             <SliderHandle
-                position={position}
+                $position={position}
                 onMouseDown={handleScroll}
             />
         </SliderContainer>
