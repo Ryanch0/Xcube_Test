@@ -10,6 +10,7 @@ import google from '../../assets/sns/google.png'
 import kakao from '../../assets/sns/kakao.png'
 import naver from '../../assets/sns/naver.png'
 import { input_color, MAIN_BG_COLOR } from '../../const/color'
+import { useNavigate } from 'react-router-dom'
 
 const ContainerWrap = styled.div`
     background-color: ${MAIN_BG_COLOR};
@@ -149,6 +150,7 @@ export default props => {
     const [pwtype, setPwtype] = useState('password')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const navigate = useNavigate()
     return (
         <ContainerWrap>
             <Container>
@@ -196,7 +198,10 @@ export default props => {
                         }} />
                         <span>자동 로그인</span>
                     </CheckBoxWrap>
-                    <LoginButton type='submit'>로그인</LoginButton>
+                    <LoginButton 
+                        onClick={()=>{navigate('/detail')}}
+                        type='submit'
+                        >로그인</LoginButton>
                     <NavigationList>
                         <ul><a href='/#'>아이디 찾기</a></ul>
                         <ul><a href='/#'>비밀번호 찾기</a></ul>

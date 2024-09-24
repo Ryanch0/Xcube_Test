@@ -13,7 +13,7 @@ import ProfileCard from '../atoms/ProfileCard'
 
 const Container = styled.div`
     position: relative;
-    background-color: #eee;
+    background-color: white;
     display: flex;
     flex-direction: column;
     min-width: 200px;
