@@ -7,8 +7,8 @@ export default props => {
     return (
         <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
-                <Route path='/' element={<LoginForm/>}/>
-                <Route path='/detail' element={<DetailPage/>}/>
+                <Route path='/Xcube_Test/' element={<LoginForm/>}/>
+                <Route path='/Xcube_Test/detail' element={<DetailPage/>}/>
         </Routes>
         </BrowserRouter>
     )
