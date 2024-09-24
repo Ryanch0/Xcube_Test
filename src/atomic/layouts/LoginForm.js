@@ -65,7 +65,7 @@ export default props => {
                         <span>자동 로그인</span>
                     </CheckBoxWrap>
                     <LoginButton 
-                        onClick={()=>{navigate('/detail')}}
+                        onClick={()=>{navigate('/Xcube_Test/detail')}}
                         type='submit'
                         >로그인</LoginButton>
                     <NavigationList>
