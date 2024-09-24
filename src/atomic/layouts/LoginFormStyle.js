@@ -43,6 +43,9 @@ export const FormSection = styled.form`
     display: flex;
     flex-direction: column;
     width: calc(80% - 18px);
+    label{
+        display: none;
+    }
     
 `
 export const Input = styled.input`

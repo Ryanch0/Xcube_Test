@@ -25,7 +25,9 @@ export default props => {
                     <h2>로그인</h2>
                 </Header>
                 <FormSection>
+                <label htmlFor='email'>이메일</label>
                     <Input
+                        id='email'
                         placeholder='이메일'
                         type='email'
                         value={email}
@@ -34,7 +36,9 @@ export default props => {
                             setEmail(event.target.value)
                         }} />
                     <div style={{ position: 'relative' }}>
+                    <label htmlFor='password'>비밀번호</label>
                         <Input
+                            id='password'
                             placeholder='비밀번호' 
                             type={pwtype} 
                             value={password}
@@ -65,7 +69,7 @@ export default props => {
                         <span>자동 로그인</span>
                     </CheckBoxWrap>
                     <LoginButton 
-                        onClick={()=>{navigate('/Xcube_Test/detail')}}
+                        onClick={()=>{navigate('/detail')}}
                         type='submit'
                         >로그인</LoginButton>
                     <NavigationList>
