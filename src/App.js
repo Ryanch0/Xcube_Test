@@ -5,7 +5,7 @@ import DetailPage from './atomic/layouts/DetailPage'
 
 export default props => {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
                 <Route path='/' element={<LoginForm/>}/>
                 <Route path='/detail' element={<DetailPage/>}/>

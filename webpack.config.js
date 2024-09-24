@@ -1,15 +1,16 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
-    publicPath: '/', // 기본 경로 설정
+    publicPath: process.env.PUBLIC_URL || '/',
   },
-  mode: process.env.NODE_ENV || 'development',
+  mode: 'development',
 
   module: {
     rules: [
@@ -38,15 +39,19 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html', // HTML 템플릿 경로 수정
+      template: './index.html',
       filename: 'index.html',
     }),
 
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'public', to: '', globOptions: { ignore: ['**/index.html'] } } // index.html 제외
+        { from: 'public', to: ''}
       ],
     }),
+    new webpack.DefinePlugin({
+      'process.env.PUBLIC_URL': JSON.stringify(process.env.PUBLIC_URL || ''), // PUBLIC_URL을 Webpack에서 정의
+    }),
+
   ],
   devServer: {
     host: '0.0.0.0',
@@ -59,6 +64,7 @@ module.exports = {
     historyApiFallback: true,
     client: {
       overlay: false,
+
     }
   }
 };
