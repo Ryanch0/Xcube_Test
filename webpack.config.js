@@ -1,14 +1,13 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack');
 
 module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
-    publicPath: '/Xcube_Test/',
+    publicPath: '/',
   },
   mode: 'development',
 
@@ -48,10 +47,6 @@ module.exports = {
         { from: 'public', to: ''}
       ],
     }),
-    new webpack.DefinePlugin({
-      'process.env.PUBLIC_URL': JSON.stringify(process.env.PUBLIC_URL || ''), // PUBLIC_URL을 Webpack에서 정의
-    }),
-
   ],
   devServer: {
     host: '0.0.0.0',
