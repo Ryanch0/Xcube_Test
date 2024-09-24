@@ -1,6 +1,8 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+
 
 module.exports = {
   entry: './src/index.js',
@@ -47,6 +49,11 @@ module.exports = {
         { from: 'public', to: ''}
       ],
     }),
+
+    new webpack.DefinePlugin({
+      'process.env.PUBLIC_URL': JSON.stringify(process.env.PUBLIC_URL || ''),  // PUBLIC_URL 정의
+    }),
+
   ],
   devServer: {
     host: '0.0.0.0',
