@@ -8,7 +8,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
-    publicPath: process.env.PUBLIC_URL || '/',
+    publicPath: '/Xcube_Test/',
   },
   mode: 'development',
 
