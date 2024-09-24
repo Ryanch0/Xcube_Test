@@ -11,7 +11,7 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/Xcube_Test/',
   },
-  mode: 'development',
+  mode: 'production',
 
   module: {
     rules: [
