@@ -7,8 +7,9 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
+    publicPath: '/', // 기본 경로 설정
   },
-  mode: 'development',
+  mode: process.env.NODE_ENV || 'development',
 
   module: {
     rules: [
@@ -37,13 +38,13 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './index.html',
+      template: './public/index.html', // HTML 템플릿 경로 수정
       filename: 'index.html',
     }),
 
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'public', to: ''}
+        { from: 'public', to: '', globOptions: { ignore: ['**/index.html'] } } // index.html 제외
       ],
     }),
   ],
@@ -58,7 +59,6 @@ module.exports = {
     historyApiFallback: true,
     client: {
       overlay: false,
-
     }
   }
 };
