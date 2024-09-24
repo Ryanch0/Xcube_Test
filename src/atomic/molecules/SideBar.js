@@ -8,9 +8,11 @@ import feedback from '../../assets/sidebar/feedback.png'
 import folder from '../../assets/sidebar/folder.png'
 import jaw from '../../assets/sidebar/jaw.png'
 import tooth from '../../assets/sidebar/tooth.png'
+import ProfileCard from '../atoms/ProfileCard'
 
 
 const Container = styled.div`
+    position: relative;
     background-color: #eee;
     display: flex;
     flex-direction: column;
@@ -35,6 +37,7 @@ export default props => {
             <TabMenu src={crown}>Edit Crown</TabMenu>
             <TabMenu src={exportIcon}>Export</TabMenu>
             <TabMenu src={feedback} count='3'>Feedback</TabMenu>
+            <ProfileCard/>
         </Container>
     )
 }
